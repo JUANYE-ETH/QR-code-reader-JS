@@ -32,7 +32,8 @@ async function startScanning() {
         );
     } catch (err) {
         console.error(err);
-        alert(err.message);
+        let message = err.message || 'Requested device not found';
+        alert(message);
         startButton.style.display = 'inline-block';
         cameraStream.style.display = 'none';
     }
