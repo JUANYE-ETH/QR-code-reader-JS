@@ -38,8 +38,13 @@ async function startScanning() {
 }
 
 function stopScanning() {
-    if (codeReader) {
-        codeReader.reset();
+    html5QrCode.stop().then(() => {
+        cameraStream.style.display = 'none';
         stopButton.style.display = 'none';
-    }
+        startButton.style.display = 'inline-block'; // Add this line to show the "Start Scanning" button again
+    }).catch((error) => {
+        console.error("Error stopping the QR code scanning:", error);
+        alert("Error stopping the QR code scanning:\n" + error);
+    });
 }
+
