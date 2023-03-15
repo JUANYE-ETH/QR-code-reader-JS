@@ -1,0 +1,14 @@
+#camera-stream {
+    width: 100%;
+    max-width: 600px;
+    display: none;
+}
+
+#start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
