@@ -1,24 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
 #camera-stream {
     width: 100%;
     max-width: 600px;
     display: none;
 }
 
-#start-button {
-    display: inline-block;
+#start-button,
+#stop-button {
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    background-color: #4CAF50;
+    color: white;
 }
 
 #stop-button {
     display: none;
-    padding: 10px 20px;
     background-color: #f44336;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
     margin-left: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    #start-button,
+    #stop-button {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #stop-button {
+        margin-top: 10px;
+    }
 }
