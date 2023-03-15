@@ -10,6 +10,11 @@ async function startScanning() {
 
     try {
         const devices = await Html5Qrcode.getCameras();
+        
+        if (devices.length === 0) {
+            throw new Error('No camera devices found');
+        }
+
         const cameraId = devices.find(device => device.label.toLowerCase().includes('back'))?.id || devices[0].id;
 
         await qrScanner.start(
@@ -27,6 +32,9 @@ async function startScanning() {
         );
     } catch (err) {
         console.error(err);
+        alert(err.message);
+        startButton.style.display = 'inline-block';
+        cameraStream.style.display = 'none';
     }
 }
 
