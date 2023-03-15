@@ -1,6 +1,8 @@
 const startButton = document.getElementById('start-button');
 const cameraStream = document.getElementById('camera-stream');
 const decodedQr = document.getElementById('decoded-qr');
+const stopButton = document.getElementById('stop-button');
+stopButton.addEventListener('click', stopScanning);
 let codeReader;
 
 startButton.addEventListener('click', startScanning);
@@ -22,6 +24,7 @@ async function startScanning() {
     codeReader.decodeFromVideoDevice(cameraId, cameraStream, (result, err) => {
         if (result) {
             decodedQr.innerText = result.text;
+            stopButton.style.display = 'inline-block';
         }
     });
 
@@ -37,5 +40,6 @@ async function startScanning() {
 function stopScanning() {
     if (codeReader) {
         codeReader.reset();
+        stopButton.style.display = 'none';
     }
 }

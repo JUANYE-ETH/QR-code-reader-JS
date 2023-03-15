@@ -20,7 +20,7 @@ A simple, user-friendly QR Code Reader web application built using the html5-qrc
 - HTML5
 - CSS
 - JavaScript
-- html5-qrcode library
+- zxing-js/library
 
 ## Created By
 Juan (Juanye)
